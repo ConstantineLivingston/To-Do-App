@@ -16,6 +16,11 @@
 		AD034F6F28E444AA00E7AAEF /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD034F6E28E444AA00E7AAEF /* Task.swift */; };
 		AD034F7828E4456900E7AAEF /* TaskListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD034F7728E4456900E7AAEF /* TaskListController.swift */; };
 		AD034F7A28E4472B00E7AAEF /* TaskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD034F7928E4472B00E7AAEF /* TaskStorage.swift */; };
+		AD034F7C28E44A9F00E7AAEF /* UITableViewCell+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD034F7B28E44A9F00E7AAEF /* UITableViewCell+Extention.swift */; };
+		AD034F7E28E44AEC00E7AAEF /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD034F7D28E44AEC00E7AAEF /* TaskCell.swift */; };
+		AD034F8028E4519500E7AAEF /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD034F7F28E4519500E7AAEF /* UIStackView+Extension.swift */; };
+		AD034F8228E4538F00E7AAEF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD034F8128E4538F00E7AAEF /* UIView+Extension.swift */; };
+		AD034F8728E4552F00E7AAEF /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD034F8628E4552F00E7AAEF /* TaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		AD034F6E28E444AA00E7AAEF /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		AD034F7728E4456900E7AAEF /* TaskListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListController.swift; sourceTree = "<group>"; };
 		AD034F7928E4472B00E7AAEF /* TaskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStorage.swift; sourceTree = "<group>"; };
+		AD034F7B28E44A9F00E7AAEF /* UITableViewCell+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extention.swift"; sourceTree = "<group>"; };
+		AD034F7D28E44AEC00E7AAEF /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		AD034F7F28E4519500E7AAEF /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		AD034F8128E4538F00E7AAEF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		AD034F8628E4552F00E7AAEF /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,13 +73,14 @@
 		AD034F5628E441A800E7AAEF /* To-Do App */ = {
 			isa = PBXGroup;
 			children = (
-				AD034F7628E4451700E7AAEF /* Settings */,
+				AD034F8528E4551A00E7AAEF /* ViewModels */,
 				AD034F7528E444FC00E7AAEF /* Reusable */,
 				AD034F7428E444ED00E7AAEF /* Views */,
 				AD034F7328E444D300E7AAEF /* Model */,
-				AD034F7228E444C700E7AAEF /* Resources */,
 				AD034F7128E444BF00E7AAEF /* Controllers */,
 				AD034F7028E444B200E7AAEF /* App */,
+				AD034F7228E444C700E7AAEF /* Resources */,
+				AD034F7628E4451700E7AAEF /* Settings */,
 			);
 			path = "To-Do App";
 			sourceTree = "<group>";
@@ -113,6 +124,7 @@
 		AD034F7428E444ED00E7AAEF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AD034F7D28E44AEC00E7AAEF /* TaskCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -120,6 +132,9 @@
 		AD034F7528E444FC00E7AAEF /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				AD034F7B28E44A9F00E7AAEF /* UITableViewCell+Extention.swift */,
+				AD034F7F28E4519500E7AAEF /* UIStackView+Extension.swift */,
+				AD034F8128E4538F00E7AAEF /* UIView+Extension.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -130,6 +145,14 @@
 				AD034F6528E441AA00E7AAEF /* Info.plist */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		AD034F8528E4551A00E7AAEF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AD034F8628E4552F00E7AAEF /* TaskViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +229,14 @@
 			files = (
 				AD034F6F28E444AA00E7AAEF /* Task.swift in Sources */,
 				AD034F5828E441A800E7AAEF /* AppDelegate.swift in Sources */,
+				AD034F7E28E44AEC00E7AAEF /* TaskCell.swift in Sources */,
+				AD034F8228E4538F00E7AAEF /* UIView+Extension.swift in Sources */,
 				AD034F7828E4456900E7AAEF /* TaskListController.swift in Sources */,
 				AD034F7A28E4472B00E7AAEF /* TaskStorage.swift in Sources */,
+				AD034F8028E4519500E7AAEF /* UIStackView+Extension.swift in Sources */,
+				AD034F7C28E44A9F00E7AAEF /* UITableViewCell+Extention.swift in Sources */,
 				AD034F5A28E441A800E7AAEF /* SceneDelegate.swift in Sources */,
+				AD034F8728E4552F00E7AAEF /* TaskViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

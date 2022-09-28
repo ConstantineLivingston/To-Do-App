@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum TaskPriority {
+enum TaskPriority: String {
     case normal
     case important
 }
 
-enum TaskStatus {
+enum TaskStatus: Int {
     case planned
     case completed
 }
