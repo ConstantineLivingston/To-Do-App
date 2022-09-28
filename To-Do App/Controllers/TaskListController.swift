@@ -52,11 +52,11 @@ extension TaskListController {
     }
     
     private func loadTasksFromStorage() {
+        sectionsTypesPosition.forEach { taskType in
+            tasks[taskType] = []
+        }
+        
         DispatchQueue.global(qos: .userInteractive).async { [unowned self] in
-            sectionsTypesPosition.forEach { taskType in
-                tasks[taskType] = []
-            }
-            
             tasksStorage.loadTasks().forEach { task in
                 tasks[task.type]?.append(task)
             }

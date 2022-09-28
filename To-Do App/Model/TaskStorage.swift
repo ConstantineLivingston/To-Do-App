@@ -22,9 +22,7 @@ class TasksStorage: TaskStoragable {
             Task(title: "Buy flowers", type: .important, status: .planned),
             Task(title: "Call parents", type: .important, status: .planned),
         ]
-        return testTasks.sorted { task1, task2 in
-            task1.status.rawValue < task2.status.rawValue
-        }
+        return testTasks.sorted { task1, task2 in task1.status.rawValue < task2.status.rawValue }
     }
     
     func saveTasks(_ tasks: [TaskProtocol]) {
