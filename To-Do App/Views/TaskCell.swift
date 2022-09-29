@@ -41,6 +41,7 @@ extension TaskCell {
                                        titleLabel)
         
         titleLabel.setContentHuggingPriority(UILayoutPriority(249), for: .horizontal)
+        titleLabel.numberOfLines = 0
     }
     
     private func constrainViews() {

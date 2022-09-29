@@ -13,6 +13,7 @@ class TaskListController: UITableViewController {
     private var tasks: [TaskPriority: [TaskProtocol]] = [:]
     
     private let sectionsTypesPosition: [TaskPriority] = [.important, .normal]
+    private let tasksStatusPosition: [TaskStatus] = [.planned, .completed]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,17 +52,27 @@ extension TaskListController {
         tableView.register(TaskCell.self, forCellReuseIdentifier: TaskCell.identifier)
     }
     
+    private func sortTasksByStatus() {
+        for (tasksGroupPriority, _) in tasks {
+            tasks[tasksGroupPriority]?.sort { task1, task2 in
+                let task1Position = tasksStatusPosition.firstIndex(of: task1.status) ?? 0
+                let task2Position = tasksStatusPosition.firstIndex(of: task2.status) ?? 0
+                return task1Position < task2Position
+            }
+        }
+    }
+    
     private func loadTasksFromStorage() {
         sectionsTypesPosition.forEach { taskType in
             tasks[taskType] = []
         }
         
-        DispatchQueue.global(qos: .userInteractive).async { [unowned self] in
-            tasksStorage.loadTasks().forEach { task in
-                tasks[task.type]?.append(task)
-            }
+        tasksStorage.loadTasksWithCompletion { [weak self] loadedTasks in
+            guard let self = self else { return }
             
-            DispatchQueue.main.async {
+            loadedTasks.forEach { task in
+                self.tasks[task.type]?.append(task)
+                self.sortTasksByStatus()
                 self.tableView.reloadData()
             }
         }
